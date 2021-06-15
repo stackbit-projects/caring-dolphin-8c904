@@ -1,0 +1,75 @@
+stackbitVersion: ~0.3.0
+ssgName: eleventy
+nodeVersion: '12'
+publishDir: _site
+dataDir: src
+pagesDir: src/posts
+models:
+  post:
+    type: page
+    label: Post
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: date
+        name: date
+        label: Date
+      - type: string
+        name: summary
+        label: Summary
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+  manifest:
+    type: data
+    label: Manifest
+    file: manifest.json
+    fields:
+      - type: string
+        name: lang
+        label: Lang
+      - type: string
+        name: short_name
+        label: Short Name
+      - type: string
+        name: name
+        label: Name
+      - type: list
+        name: icons
+        label: Icons
+        items:
+          type: object
+          fields:
+            - type: image
+              name: src
+              label: Src
+            - type: string
+              name: sizes
+              label: Sizes
+            - type: string
+              name: type
+              label: Type
+      - type: string
+        name: start_url
+        label: Start Url
+      - type: string
+        name: display
+        label: Display
+      - type: string
+        name: background_color
+        label: Background Color
+      - type: string
+        name: theme_color
+        label: Theme Color
+  posts:
+    type: data
+    label: Posts
+    file: posts/posts.json
+    fields:
+      - type: string
+        name: layout
+        label: Layout
